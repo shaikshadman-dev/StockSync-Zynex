@@ -1,0 +1,246 @@
+/* ============================================================
+   StockSync Modern Header / Navbar (Matching Design Spec)
+   ============================================================ */
+
+.stocksync-header {
+  background-color: #050b15;
+  border-bottom: 1px solid #131d2e;
+  height: 64px;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.stocksync-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0 24px;
+}
+
+@media (max-width: 575.98px) {
+  .stocksync-header-container {
+    padding: 0 16px;
+  }
+}
+
+/* ------------------------------------------------------------
+   Left: Brand with Blue "S" Icon & Tagline
+   ------------------------------------------------------------ */
+.stocksync-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.stocksync-logo-badge {
+  width: 38px;
+  height: 38px;
+  background-color: #2563eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stocksync-brand-wrap:hover .stocksync-logo-badge {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+}
+
+.stocksync-logo-letter {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.stocksync-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stocksync-brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.15;
+  letter-spacing: -0.2px;
+}
+
+.stocksync-brand-tagline {
+  font-size: 12px;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------
+   Center: Desktop Navigation Bar
+   ------------------------------------------------------------ */
+.stocksync-center-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stocksync-nav-link {
+  color: #94a3b8;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.stocksync-nav-link:hover {
+  color: #f1f5f9;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.stocksync-nav-link.active {
+  color: #60a5fa;
+  background-color: #0f1e38;
+  border-color: rgba(59, 130, 246, 0.25);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   Right: Desktop Status Pill & Mobile Hamburger
+   ------------------------------------------------------------ */
+.stocksync-header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* System Live Pill Badge */
+.stocksync-system-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+.system-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.system-live-text {
+  line-height: 1;
+}
+
+/* Mobile Hamburger Button */
+.stocksync-mobile-hamburger {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #0d1728;
+  border: 1px solid #1a2a44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.stocksync-mobile-hamburger:hover {
+  background-color: #15243e;
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.stocksync-mobile-hamburger:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.35);
+}
+
+.stocksync-hamburger-icon {
+  color: inherit;
+}
+
+/* ------------------------------------------------------------
+   Mobile Dropdown Navigation Menu
+   ------------------------------------------------------------ */
+.stocksync-mobile-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background-color: #07101e;
+  border-bottom: 1px solid #14243b;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+  animation: slideDownMenu 0.18s ease-out forwards;
+}
+
+@keyframes slideDownMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stocksync-mobile-menu-inner {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stocksync-mobile-nav-item {
+  display: block;
+  padding: 11px 16px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.15s ease;
+}
+
+.stocksync-mobile-nav-item:hover {
+  background-color: #0f1e38;
+  color: #f1f5f9;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.stocksync-mobile-nav-item.active {
+  background-color: #0f1e38;
+  color: #60a5fa;
+  border-color: #2563eb;
+  font-weight: 600;
+}

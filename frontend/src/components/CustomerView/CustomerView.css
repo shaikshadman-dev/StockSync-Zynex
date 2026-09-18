@@ -1,0 +1,714 @@
+/* ========================================================
+   Customer View (Mock Delivery) Styling
+   ======================================================== */
+.customer-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Telemetry Simulation Header */
+.mock-sim-banner {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mock-sim-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mock-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 3px 8px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.mock-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #a855f7;
+  box-shadow: 0 0 6px #a855f7;
+  animation: pulse-dot 2s infinite;
+}
+
+.mock-sim-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.3px;
+}
+
+.mock-sim-desc {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+.mock-sim-desc strong {
+  color: #f1f5f9;
+}
+
+.btn-switch-to-inventory {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #f1f5f9;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-switch-to-inventory:hover {
+  background-color: #334155;
+  border-color: #475569;
+  transform: translateY(-1px);
+}
+
+/* Floating Mock Order Toast Notification */
+.mock-order-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: #0b1329;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 12px rgba(56, 189, 248, 0.25);
+  animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 420px;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-icon {
+  font-size: 20px;
+  color: #38bdf8;
+}
+
+.toast-body strong {
+  display: block;
+  font-size: 13px;
+  color: #38bdf8;
+  margin-bottom: 2px;
+}
+
+.toast-body p {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* Platform Switcher Tabs Container */
+.mock-platform-switcher {
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 6px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+
+.platform-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.platform-tab-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+}
+
+.platform-icon-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-swiggy {
+  background-color: #f97316;
+  box-shadow: 0 0 6px #f97316;
+}
+
+.dot-zomato {
+  background-color: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+.dot-direct {
+  background-color: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.platform-tab-eta {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+
+.platform-tab-btn.tab-swiggy.active {
+  background-color: #f97316;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+.platform-tab-btn.tab-swiggy.active .platform-tab-eta {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+.platform-tab-btn.tab-zomato.active {
+  background-color: #ef4444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.platform-tab-btn.tab-zomato.active .platform-tab-eta {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+.platform-tab-btn.tab-direct.active {
+  background-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.platform-tab-btn.tab-direct.active .platform-tab-eta {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+/* Simulated Customer App Container */
+.mock-app-frame {
+  background-color: #0b1220;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.mock-store-header {
+  background-color: #0f172a;
+  border-bottom: 2px solid #1e293b;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.mock-store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mock-store-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  width: fit-content;
+  margin-bottom: 4px;
+}
+
+.mock-restaurant-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.mock-store-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.store-rating {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.store-eta {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.store-stock-count {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.meta-separator {
+  color: #475569;
+}
+
+.mock-tagline {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.mock-channel-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #111a2e;
+  border: 1px solid #1e2c4a;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #cbd5e1;
+  flex-shrink: 0;
+}
+
+.mock-status-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* Category Filter Bar */
+.mock-category-bar {
+  background-color: #0d1527;
+  border-bottom: 1px solid #172033;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  overflow-x: auto;
+}
+
+.category-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.category-pills-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-pill {
+  background-color: #111a2e;
+  border: 1px solid #1e2c4a;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.category-pill:hover {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+.category-pill.active {
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+  color: #090e1a;
+  font-weight: 700;
+}
+
+/* Dishes Grid Container (managed by Bootstrap row g-3) */
+.mock-dishes-grid {
+  padding: 8px 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mock-dish-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mock-dish-card:hover {
+  border-color: #334155;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.mock-dish-card.card-unavailable {
+  opacity: 0.65;
+  background-color: #0c1222;
+  border-color: #1a2335;
+}
+
+.mock-dish-card.card-unavailable:hover {
+  transform: none;
+  border-color: #1a2335;
+}
+
+.mock-dish-card.card-low-stock {
+  border-color: rgba(239, 68, 68, 0.35);
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+.dish-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dish-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dish-category-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.dish-sku-tag {
+  font-size: 10px;
+  font-family: monospace;
+  color: #64748b;
+}
+
+.dish-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.35;
+}
+
+.dish-pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.dish-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f1f5f9;
+}
+
+.dish-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  line-height: 1.1;
+}
+
+.badge-available {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-low-stock {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.badge-out-of-stock {
+  background-color: rgba(100, 116, 139, 0.15);
+  color: #94a3b8;
+  border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+.badge-delisted {
+  background-color: rgba(225, 29, 72, 0.15);
+  color: #fda4af;
+  border: 1px solid rgba(225, 29, 72, 0.3);
+}
+
+.badge-master-off {
+  background-color: rgba(71, 85, 105, 0.2);
+  color: #94a3b8;
+  border: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+.dish-stock-info {
+  margin-top: 4px;
+}
+
+.stock-info-text {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.in-stock-text {
+  color: #94a3b8;
+}
+
+.in-stock-text strong {
+  color: #f1f5f9;
+}
+
+.out-stock-text {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* Dish Card Footer & Buttons */
+.dish-card-footer {
+  margin-top: 14px;
+}
+
+.btn-mock-order {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+}
+
+.btn-mock-order:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-mock-order:active {
+  transform: translateY(0);
+}
+
+.cart-icon {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.btn-mock-disabled {
+  width: 100%;
+  background-color: #1e293b;
+  color: #64748b;
+  border: 1px solid #334155;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: not-allowed;
+  font-family: inherit;
+}
+
+/* Simulated Orders Log Card */
+.mock-orders-log-card {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.log-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.log-card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.log-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.log-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0b1220;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+}
+
+.log-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.log-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.log-dish-name {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.log-platform-tag {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.log-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.log-remaining {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.log-time {
+  color: #64748b;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .mock-sim-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-switch-to-inventory {
+    width: 100%;
+    text-align: center;
+  }
+
+  .platform-tab-btn {
+    width: 100%;
+  }
+
+  .mock-store-header {
+    flex-direction: column;
+  }
+
+  .log-item-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .log-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

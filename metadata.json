@@ -1,0 +1,6 @@
+{
+  "name": "StockSync",
+  "description": "Central inventory availability system synchronizing delivery channels to eliminate ghost orders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

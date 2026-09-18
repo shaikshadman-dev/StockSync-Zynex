@@ -1,0 +1,444 @@
+.hero-banner-container {
+  width: 100%;
+  background: linear-gradient(180deg, #0b1329 0%, #0d1733 100%);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+@media (max-width: 575.98px) {
+  .hero-banner-container {
+    padding: 18px 16px;
+    margin-bottom: 18px;
+    gap: 16px;
+  }
+}
+
+/* Top Greeting & Velocity Bar */
+.hero-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+}
+
+.hero-greeting-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.hero-heading {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wave-hand {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.5s infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hero-subtext {
+  font-size: 13.5px;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 840px;
+  word-break: break-word;
+}
+
+.hero-highlight-red {
+  color: #f87171;
+  font-weight: 700;
+}
+
+/* Top Right Metrics & Actions */
+.hero-actions-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.velocity-box {
+  background-color: #111e3b;
+  border: 1px solid #1e2d52;
+  border-radius: 8px;
+  padding: 9px 15px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.velocity-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.velocity-value {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #34d399;
+  font-family: monospace;
+  margin-top: 2px;
+}
+
+.ping-channels-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #1a2542;
+  border: 1px solid #2d3b63;
+  color: #cbd5e1;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.ping-channels-btn:hover {
+  background-color: #24335a;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.ping-channels-btn.pinging {
+  background-color: #065f46;
+  border-color: #10b981;
+  color: #ecfdf5;
+}
+
+.ping-icon {
+  font-size: 13px;
+}
+
+/* Metric Cards Responsive Container (styled for Bootstrap row g-3) */
+.hero-metrics-grid {
+  width: 100%;
+  margin: 0;
+}
+
+.metric-card {
+  background-color: #111a33;
+  border: 1px solid #1e2c4f;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 122px;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.metric-card:hover {
+  border-color: #2e4370;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+/* Status Badges */
+.badge-healthy {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.badge-attention {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fb7185;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.badge-all-online {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.badge-protected {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+/* Card Numbers */
+.card-main-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.stat-big {
+  font-size: clamp(21px, 2.3vw, 25px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  font-family: monospace;
+}
+
+.stat-total {
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stat-unit-text {
+  font-size: 12.5px;
+  color: #cbd5e1;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stat-big-teal {
+  font-size: clamp(20px, 2.1vw, 24px);
+  font-weight: 800;
+  color: #2dd4bf;
+  line-height: 1.1;
+  font-family: monospace;
+}
+
+.stat-risk-sub {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Progress bar in Card 1 */
+.card-footer-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #34d399;
+  font-family: monospace;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.prep-label {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: #1e293b;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Card 2 Footer */
+.card-footer-alert {
+  font-size: 11px;
+  color: #fca5a5;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alert-progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: #33202e;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.alert-progress-fill {
+  height: 100%;
+  width: 25%;
+  background: #f43f5e;
+  border-radius: 2px;
+}
+
+/* Card 3 Channels Online */
+.card-platforms-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: #cbd5e1;
+}
+
+.channel-online-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.dot-green {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #10b981;
+  flex-shrink: 0;
+}
+
+.card-response-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.resp-ms {
+  color: #34d399;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+/* Card 4 Loss Avoidance Footer */
+.card-loss-footer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ghost-tickets-row {
+  font-size: 10.5px;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.penalties-saved-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #94a3b8;
+  gap: 4px;
+}
+
+.penalties-amount {
+  color: #f1f5f9;
+  font-weight: 700;
+  font-family: monospace;
+  white-space: nowrap;
+}
